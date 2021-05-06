@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Djoque:</strong>
+  <%= @djoque.djoke %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @djoque.created_at %>
+</p>
+
+<%= @djoque.likes.count %>
+
+<%= button_to 'Like', toggle_like_djoque_path(@djoque.id), method: :post %>
+
+<%= link_to 'Retour', djoques_path %>

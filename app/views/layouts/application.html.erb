@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Djoques</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_pack_tag 'application'%>
+  </head>
+
+  <body>
+    <%= yield %>
+    <% if djoker_signed_in? %>
+      <%= link_to "Se déconnecter", destroy_djoker_session_path, method: :delete %>
+    <%else%>
+      <nav>
+        <%= link_to "Se connecter", djoker_session_path %>
+        <%= link_to "S'inscrire", new_djoker_registration_path %>
+      </nav>
+    <%end%>
+  </body>
+</html>

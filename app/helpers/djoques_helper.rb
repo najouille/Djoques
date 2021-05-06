@@ -1,0 +1,2 @@
+module DjoquesHelper
+end

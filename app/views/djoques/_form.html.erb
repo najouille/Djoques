@@ -1,0 +1,22 @@
+<%= form_with(model: djoque) do |form| %>
+  <% if djoque.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(djoque.errors.count, "error") %> prohibited this djoque from being saved:</h2>
+
+      <ul>
+        <% djoque.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :djoke, "Votre Djoque" %>
+    <%= form.text_area :djoke %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Publier"%>
+  </div>
+<% end %>

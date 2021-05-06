@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Djoques</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Djoques</th>
+      <th>Djoker</th>
+      <th>Likes</th>
+      <th>Date</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @djoques.each do |djoque| %>
+      <tr>
+        <td><%= link_to djoque.djoke, djoque %></td>
+        <td><%= djoque.djoker.username %></td>
+        <td><%= djoque.like %></td>
+        <td><%= djoque.created_at.to_date %></td>
+        <td><%= link_to 'Supprimer', djoque, method: :delete, data: { confirm: 'Êtes-vous sûr de supprimer votre djoque ?' } if djoque.djoker == current_djoker %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouvelle Djoque', new_djoque_path %>

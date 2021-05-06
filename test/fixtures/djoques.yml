@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  djoke: MyText
+  date: 2021-05-06
+  like: 1
+
+two:
+  djoke: MyText
+  date: 2021-05-06
+  like: 1
